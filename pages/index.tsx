@@ -1,9 +1,11 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 function Login() {
+  const router = useRouter();
   return (
     <div className="h-screen w-full flex justify-center items-center flex-col font-Montserrat">
       <div className="w-[390px] sm-w-full px-8">
@@ -19,7 +21,12 @@ function Login() {
           type="password"
         />
         <div className="pt-6">
-          <Button label="Login" onClick={() => {}} />
+          <Button
+            label="Login"
+            onClick={() => {
+              router.push("/home");
+            }}
+          />
         </div>
         <div className="text-center pt-2">
           <Link
